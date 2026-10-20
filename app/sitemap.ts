@@ -10,7 +10,7 @@ import { BOOKS } from "@/data/bible/books";
 
 /** Public educational pages only. Child dashboards, parent and admin areas are excluded. */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/stories", "/games", "/world", "/verses", "/bible", "/prayer", "/jesus", "/characters", "/map", "/timeline", "/values", "/music", "/printables", "/about", "/privacy", "/safety", "/terms", "/contact"];
+  const pages = ["", "/stories", "/games", "/world", "/verses", "/bible", "/bible/listen", "/prayer", "/jesus", "/characters", "/map", "/timeline", "/values", "/music", "/printables", "/about", "/privacy", "/safety", "/terms", "/contact"];
   const urls = [
     ...pages,
     ...LESSONS.map((l) => `/lessons/${l.id}`),

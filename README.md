@@ -35,6 +35,7 @@ npm run dev                   # http://localhost:3000
 | `npm test` | Vitest unit tests: curriculum validation, Scripture integrity, puzzle generators, progress logic, server validation |
 | `npm run test:e2e` | Playwright journeys on desktop, tablet and phone (sample child journey, parent dashboard, security boundaries, games, responsive checks) |
 | `npm run db:migrate` / `npm run db:seed` | Prisma migrations / seed |
+| `npm run record:bible` | Lists Bible chapters still to record for "Read Me the Bible" (dry run; `-- --only=jonah`, `-- --all`). Add `-- --yes` to record with verse timing. **This spends credits.** |
 | `npm run record:narration` | Lists narration still to record (dry run). Add `-- --yes` to record with ElevenLabs. **This spends credits.** |
 
 To build while a dev server is running, use a separate output folder:

@@ -142,6 +142,8 @@ h1, h2, h3, h4, .font-display { font-family: var(--font-display); letter-spacing
 @keyframes flutter { 0%, 100% { transform: translate(0, 0) rotate(-8deg); } 25% { transform: translate(40px, -30px) rotate(6deg); } 50% { transform: translate(90px, -5px) rotate(-6deg); } 75% { transform: translate(40px, 25px) rotate(8deg); } }
 @keyframes bubble { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 0.8; } 100% { transform: translateY(-260px); opacity: 0; } }
 @keyframes confetti-fall { 0% { transform: translateY(-20vh) rotate(0); } 100% { transform: translateY(110vh) rotate(720deg); } }
+@keyframes pageNext { 0% { transform: rotateY(-12deg) translateX(3%); opacity: 0.4; } 100% { transform: none; opacity: 1; } }
+@keyframes pagePrev { 0% { transform: rotateY(12deg) translateX(-3%); opacity: 0.4; } 100% { transform: none; opacity: 1; } }
 @keyframes shine { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
 .animate-flutter { animation: flutter 9s ease-in-out infinite; }

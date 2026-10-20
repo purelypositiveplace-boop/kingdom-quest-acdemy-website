@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Bookmark, Search } from "lucide-react";
+import { Bookmark, BookOpenText, Search } from "lucide-react";
 import { BOOKS, CANON, type BookGroup } from "@/data/bible/books";
 import counts from "@/data/bible/chapter-counts.generated.json";
 import { parseRef } from "@/lib/bible/reference";
@@ -58,6 +58,13 @@ export function BookList() {
           Search the whole Bible
         </Link>
       </p>
+
+      <Link href="/bible/listen" className="card flex min-h-16 items-center gap-3 p-4 font-display text-xl font-bold text-royal-dark hover:-translate-y-0.5" data-testid="open-listen">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#8a5a33] text-white">
+          <BookOpenText aria-hidden />
+        </span>
+        Read Me the Bible: open it like a storybook
+      </Link>
 
       {bookmarks.length > 0 && (
         <section>

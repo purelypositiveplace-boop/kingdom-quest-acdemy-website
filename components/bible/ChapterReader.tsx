@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { Bookmark, ChevronLeft, ChevronRight, Heart, Minus, Plus, Search, Volume2 } from "lucide-react";
+import { Bookmark, BookOpenText, ChevronLeft, ChevronRight, Heart, Minus, Plus, Search, Volume2 } from "lucide-react";
 import { BOOK_BY_ID, BOOKS } from "@/data/bible/books";
 import { LESSONS } from "@/lib/curriculum";
 import { parseRef } from "@/lib/bible/reference";
@@ -91,6 +91,9 @@ export function ChapterReader({ bookId, chapter, chapters }: { bookId: string; c
             <button type="button" aria-label="Bigger text" onClick={() => setSize((s) => Math.min(2.25, s + 0.125))} className="tap-target flex items-center justify-center rounded-full bg-royal-soft">
               <Plus aria-hidden />
             </button>
+            <Link href={`/bible/listen/${bookId}/${chapter}`} className="flex min-h-12 items-center gap-1 rounded-full bg-sun px-4 font-bold text-ink">
+              <BookOpenText size={18} aria-hidden /> Read like a book
+            </Link>
             <button type="button" aria-pressed={progress.bookmarks.includes(bmKey)} onClick={() => toggleBookmark(bmKey)} className={`flex min-h-12 items-center gap-1 rounded-full px-4 font-bold ${progress.bookmarks.includes(bmKey) ? "bg-sun text-ink" : "bg-royal-soft text-royal-dark"}`}>
               <Bookmark size={18} aria-hidden /> {progress.bookmarks.includes(bmKey) ? "Bookmarked" : "Bookmark"}
             </button>

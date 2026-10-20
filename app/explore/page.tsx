@@ -9,6 +9,7 @@ export const metadata: Metadata = { title: "Explore Everything", alternates: { c
 const TILES = [
   { href: "/prayer", label: "Prayer Garden", icon: Flower2, color: "#ff8fc1" },
   { href: "/jesus", label: "Learn About Jesus", icon: Cross, color: "#f0a92e" },
+  { href: "/bible/listen", label: "Read Me the Bible", icon: BookOpen, color: "#8a5a33" },
   { href: "/bible", label: "Bible Reader", icon: ScrollText, color: "#2a48d4" },
   { href: "/characters", label: "Bible People", icon: Users, color: "#ff7a59" },
   { href: "/map", label: "Bible Map", icon: Map, color: "#e0a045" },

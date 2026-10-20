@@ -20,6 +20,8 @@ export const ART = {
   page: {
     prayerGarden: "/art/pages/prayer-garden.webp",
     bibleReader: "/art/pages/bible-reader.webp",
+    music: "/art/pages/music.webp",
+    reading: "/art/pages/reading.webp",
   },
 } as const;
 
@@ -37,8 +39,12 @@ export const ART_READY = {
   mascots: true,
   /** all 30 lessons (960x640) */
   lessonCovers: true,
-  /** story scenes per lesson, filled in as they land */
-  scenes: {} as Record<string, string[]>,
+  /** story scenes per lesson (1024x683, named by scene id) */
+  scenes: {
+    creation: ["beginning", "day1", "day2", "day3", "day4", "day5", "day6", "day7", "care"],
+    noah: ["noah-walked", "build", "animals", "rain", "safe", "dove", "out", "rainbow"],
+    "jesus-born": ["gabriel", "joseph-dream", "journey", "born", "shepherds", "glory", "share", "star", "gifts"],
+  } as Record<string, string[]>,
 };
 
 export const ART_NOTE =

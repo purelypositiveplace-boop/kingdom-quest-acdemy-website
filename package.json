@@ -16,7 +16,8 @@
     "start": "next start",
     "lint": "eslint",
     "record:narration": "tsx scripts/record-narration.ts",
-    "build:art": "tsx scripts/build-art-manifest.ts"
+    "build:art": "tsx scripts/build-art-manifest.ts",
+    "record:bible": "tsx scripts/record-bible.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
