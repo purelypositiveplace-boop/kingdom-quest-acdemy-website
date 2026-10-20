@@ -1,0 +1,116 @@
+// Kingdom Quest Academy database.
+// Curriculum content lives in typed files under data/ (reviewed in git); the database stores only
+// family-owned data and the theology review log. Every child record belongs to exactly one parent
+// and is deleted with it (onDelete: Cascade).
+//
+// Development uses SQLite. For production, change provider to "postgresql" and set DATABASE_URL.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  passwordHash String
+  /// "PARENT" or "ADMIN"
+  role         String          @default("PARENT")
+  /// when the adult accepted the parental notice
+  consentAt    DateTime?
+  createdAt    DateTime        @default(now())
+  children     ChildProfile[]
+  sessions     Session[]
+  reviews      ContentReview[]
+}
+
+model Session {
+  id                  String    @id @default(cuid())
+  /// SHA-256 of the random session token; the token itself is only in the httpOnly cookie
+  tokenHash           String    @unique
+  userId              String
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt           DateTime  @default(now())
+  expiresAt           DateTime
+  /// parent-only areas need a recent password check, so a child can't wander in
+  parentVerifiedUntil DateTime?
+
+  @@index([userId])
+}
+
+model ChildProfile {
+  id           String             @id @default(cuid())
+  parentId     String
+  parent       User               @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  /// nickname only — never a child's real name or email
+  nickname     String
+  avatar       String             @default("leo")
+  /// "disciples" | "explorers" | "champions"
+  level        String             @default("explorers")
+  world        String             @default("creation-garden")
+  /// JSON: accessibility and parent settings
+  settingsJson String             @default("{}")
+  /// JSON: ProgressSnapshot (lib/progress/types.ts)
+  progressJson String             @default("{}")
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  completions  LessonCompletion[]
+  games        GameResult[]
+
+  @@index([parentId])
+}
+
+model LessonCompletion {
+  id          String       @id @default(cuid())
+  childId     String
+  child       ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  /// stable lesson id from data/lessons
+  lessonId    String
+  /// content version the lesson was completed on
+  version     Int
+  score       Int
+  total       Int
+  stars       Int
+  completedAt DateTime
+
+  @@unique([childId, lessonId])
+  @@index([lessonId])
+}
+
+model GameResult {
+  id        String       @id @default(cuid())
+  childId   String
+  child     ChildProfile @relation(fields: [childId], references: [id], onDelete: Cascade)
+  gameId    String
+  plays     Int
+  wins      Int
+  best      Int
+  updatedAt DateTime     @updatedAt
+
+  @@unique([childId, gameId])
+}
+
+/// Theology/content review workflow: every decision is kept as history.
+model ContentReview {
+  id          String   @id @default(cuid())
+  contentType String
+  contentId   String
+  version     Int
+  /// "approved" | "needs-changes" | "needs-review"
+  status      String
+  notes       String   @default("")
+  reviewerId  String
+  reviewer    User     @relation(fields: [reviewerId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+
+  @@index([contentType, contentId])
+}
+
+model SiteSetting {
+  key   String @id
+  value String
+}

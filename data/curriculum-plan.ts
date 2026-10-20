@@ -1,0 +1,38 @@
+/**
+ * The road to 150+ lessons. These are planned, not built — they never appear to children.
+ * To build one: add a full lesson to data/lessons/*.ts using the same id, then remove it here.
+ */
+export const PLANNED_LESSONS: { id: string; title: string; refs: string; category: string }[] = [
+  { id: "abraham-isaac", title: "Abraham and Sarah Have Isaac", refs: "Genesis 21:1-7", category: "abraham" },
+  { id: "jacob-esau", title: "Jacob and Esau", refs: "Genesis 25:19-34; 33:1-11", category: "isaac-jacob" },
+  { id: "moses-pharaoh", title: "Moses and Pharaoh", refs: "Exodus 5–12", category: "moses" },
+  { id: "manna", title: "Manna in the Wilderness", refs: "Exodus 16", category: "moses" },
+  { id: "david-jonathan", title: "David and Jonathan", refs: "1 Samuel 18:1-4; 20", category: "david" },
+  { id: "solomon-wisdom", title: "King Solomon Asks for Wisdom", refs: "1 Kings 3:1-15", category: "solomon" },
+  { id: "elijah-baal", title: "Elijah and the Prophets of Baal", refs: "1 Kings 18:20-39", category: "elijah" },
+  { id: "naaman", title: "Naaman and the River Jordan", refs: "2 Kings 5:1-14", category: "elijah" },
+  { id: "fiery-furnace", title: "Shadrach, Meshach, and Abednego", refs: "Daniel 3", category: "daniel" },
+  { id: "nehemiah", title: "Nehemiah Rebuilds the Wall", refs: "Nehemiah 1–6", category: "christian-living" },
+  { id: "angel-mary", title: "The Angel Visits Mary", refs: "Luke 1:26-38", category: "birth-of-jesus" },
+  { id: "shepherds", title: "The Shepherds Visit Baby Jesus", refs: "Luke 2:8-20", category: "birth-of-jesus" },
+  { id: "wise-men", title: "The Wise Men Visit Jesus", refs: "Matthew 2:1-12", category: "birth-of-jesus" },
+  { id: "young-jesus", title: "Young Jesus in the Temple", refs: "Luke 2:41-52", category: "teachings" },
+  { id: "water-wine", title: "Jesus Turns Water into Wine", refs: "John 2:1-11", category: "miracles" },
+  { id: "walks-on-water", title: "Jesus Walks on Water", refs: "Matthew 14:22-33", category: "miracles" },
+  { id: "lords-prayer", title: "Jesus Teaches the Lord's Prayer", refs: "Matthew 6:5-13", category: "teachings" },
+  { id: "blind-man", title: "Jesus Heals a Blind Man", refs: "John 9:1-12", category: "miracles" },
+  { id: "lazarus", title: "Lazarus Is Raised", refs: "John 11:1-44", category: "miracles" },
+  { id: "palm-sunday", title: "Palm Sunday", refs: "Matthew 21:1-11", category: "holy-week" },
+  { id: "last-supper", title: "The Last Supper", refs: "Luke 22:7-20", category: "holy-week" },
+  { id: "gethsemane", title: "Jesus Prays in Gethsemane", refs: "Matthew 26:36-46", category: "holy-week" },
+  { id: "appears-disciples", title: "Jesus Appears to His Disciples", refs: "Luke 24:36-49", category: "resurrection" },
+  { id: "great-commission", title: "The Great Commission", refs: "Matthew 28:16-20", category: "resurrection" },
+  { id: "peter-john-heal", title: "Peter and John Help a Lame Man", refs: "Acts 3:1-10", category: "early-church" },
+  { id: "paul-silas", title: "Paul and Silas in Prison", refs: "Acts 16:16-34", category: "paul" },
+  { id: "fruit-of-spirit", title: "The Fruit of the Spirit", refs: "Galatians 5:22-23", category: "christian-living" },
+  { id: "armor-of-god", title: "The Armour of God", refs: "Ephesians 6:10-18", category: "christian-living" },
+  { id: "good-news", title: "The Good News of Jesus", refs: "1 Corinthians 15:1-8", category: "christian-living" },
+  { id: "lost-coin", title: "The Lost Coin", refs: "Luke 15:8-10", category: "parables" },
+  { id: "sower", title: "The Parable of the Sower", refs: "Matthew 13:1-23", category: "parables" },
+  { id: "mustard-seed", title: "The Mustard Seed", refs: "Matthew 13:31-32", category: "parables" },
+];

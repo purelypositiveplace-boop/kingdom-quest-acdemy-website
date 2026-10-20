@@ -1,0 +1,167 @@
+import type { ValueLesson } from "@/lib/curriculum/types";
+
+export const TRUSTED_ADULT_NOTE =
+  "If someone is hurting you or making you feel unsafe, tell a trusted grown-up right away — a parent, teacher, or another safe adult. Forgiving someone never means you have to keep a hurtful secret or stay somewhere unsafe.";
+
+/** Living with Love — values lessons with everyday scenarios. */
+export const VALUES: ValueLesson[] = [
+  {
+    id: "being-kind", title: "Being Kind", verse: "Ephesians 4:32",
+    teaching: "The Bible tells us to be kind and tender-hearted to one another. Kindness is love in action.",
+    scenario: "A new kid at school is sitting alone at lunch, looking at the floor.",
+    choices: [
+      { text: "Ask if they want to sit with you and your friends.", good: true, feedback: "Wonderful! You made someone feel welcome, just like Jesus welcomes us." },
+      { text: "Keep eating and pretend you didn't notice.", good: false, feedback: "It's easy to miss people. Next time, look for someone who might be lonely." },
+      { text: "Smile and say hello on your way past.", good: true, feedback: "A smile and hello can brighten someone's whole day!" },
+    ],
+    explain: "Kindness notices people and does something to help. Even small kindness matters to God.",
+    practice: "Do three kind things today without being asked. Count them on your fingers!",
+    reflection: "Who showed you kindness recently? How did it feel?",
+  },
+  {
+    id: "sharing", title: "Sharing", verse: "Luke 6:31",
+    teaching: "Jesus taught us to treat others the way we want to be treated. In the Bible, a boy shared his lunch and Jesus fed thousands with it.",
+    scenario: "You have a big box of crayons. Your little brother wants to colour too, but he has none.",
+    choices: [
+      { text: "Share some crayons so you can colour together.", good: true, feedback: "Great sharing! Now you both get to enjoy colouring." },
+      { text: "Hide the box so he can't use any.", good: false, feedback: "That would make him feel left out. How would you feel if someone did that to you?" },
+      { text: "Let him choose a few colours to use.", good: true, feedback: "What a generous heart!" },
+    ],
+    explain: "Sharing shows we care about others as much as ourselves. God has shared so much with us!",
+    practice: "Share a snack or toy with someone today.",
+    reflection: "Is it ever hard to share? Why?",
+  },
+  {
+    id: "telling-truth", title: "Telling the Truth", verse: "Ephesians 4:25",
+    teaching: "God is truthful, and he wants us to be honest. Telling the truth builds trust.",
+    scenario: "You accidentally broke your mom's favourite mug. No one saw it happen.",
+    choices: [
+      { text: "Tell your mom what happened and say sorry.", good: true, feedback: "That was brave and honest. Telling the truth is always the right choice." },
+      { text: "Hide the pieces and say nothing.", good: false, feedback: "Hiding it might feel easier, but honesty builds trust. It's never too late to tell the truth." },
+      { text: "Say the cat did it.", good: false, feedback: "Blaming someone else isn't fair to them. Telling the truth is better, even when it's hard." },
+    ],
+    explain: "Accidents happen! Telling the truth when we make a mistake shows courage and honesty.",
+    practice: "If you make a mistake today, be the first to tell someone about it.",
+    reflection: "Why do you think it's sometimes hard to tell the truth?",
+  },
+  {
+    id: "forgiving", title: "Forgiving Someone", verse: "Colossians 3:13",
+    teaching: "The Bible says to forgive each other, just as the Lord forgave us. Forgiving means choosing not to pay someone back.",
+    scenario: "Your friend knocked over the block tower you were building. Now they say, 'I'm sorry.'",
+    choices: [
+      { text: "Say, 'I forgive you. Want to help me build it again?'", good: true, feedback: "Beautiful! You chose forgiveness, just like Jesus teaches." },
+      { text: "Knock over their tower to get even.", good: false, feedback: "Getting even usually makes things worse. Forgiveness can make things better." },
+      { text: "Tell them you're still upset, but you forgive them.", good: true, feedback: "That's honest and kind. It's okay to have feelings and still forgive." },
+    ],
+    explain: "Forgiving doesn't mean what happened was okay, and it doesn't mean pretending you're not hurt. It means letting go of getting even.",
+    practice: "Think of someone you need to forgive. Pray for them today.",
+    reflection: "How does it feel when someone forgives you?",
+    safetyNote: "TRUSTED_ADULT",
+  },
+  {
+    id: "saying-sorry", title: "Saying Sorry", verse: "1 John 1:9",
+    teaching: "When we do something wrong, saying sorry to God and to others is the first step to making it right.",
+    scenario: "You said something unkind to your sister when you were grumpy. Now she's sad.",
+    choices: [
+      { text: "Say, 'I'm sorry I said that. That wasn't kind.'", good: true, feedback: "Saying sorry takes courage. Well done!" },
+      { text: "Say, 'Well, you made me grumpy!'", good: false, feedback: "Blaming doesn't help her feel better. A real sorry takes responsibility." },
+      { text: "Say sorry and give her a hug if she wants one.", good: true, feedback: "What a loving way to make things right!" },
+    ],
+    explain: "A good sorry says what we did, says it was wrong, and tries to make it better.",
+    practice: "Practise a 'good sorry': 'I'm sorry for ___. Next time I will ___.'",
+    reflection: "What's the difference between a quick 'sorry' and a real one?",
+  },
+  {
+    id: "being-patient", title: "Being Patient", verse: "1 Corinthians 13:4",
+    teaching: "The Bible says love is patient. Patience is waiting without getting upset.",
+    scenario: "You're waiting for your turn on the swing, and it feels like forever.",
+    choices: [
+      { text: "Wait calmly and find something fun to do while you wait.", good: true, feedback: "Great patience! Waiting is easier when you stay calm." },
+      { text: "Push the other kid off the swing.", good: false, feedback: "That could hurt someone. Patience means waiting kindly." },
+      { text: "Ask nicely, 'Can I have a turn after you?'", good: true, feedback: "Asking politely is a great choice!" },
+    ],
+    explain: "Patience is a fruit of the Holy Spirit. God is patient with us, and he helps us be patient too.",
+    practice: "Next time you have to wait, take three slow breaths and count to ten.",
+    reflection: "When is it hardest for you to be patient?",
+  },
+  {
+    id: "showing-gratitude", title: "Showing Gratitude", verse: "1 Thessalonians 5:18",
+    teaching: "God wants us to give thanks. Gratitude means noticing the good things God and others give us.",
+    scenario: "Your grandma made your favourite dinner tonight.",
+    choices: [
+      { text: "Say, 'Thank you, Grandma! This is delicious!'", good: true, feedback: "Saying thank you makes people feel appreciated!" },
+      { text: "Eat quickly and run off to play.", good: false, feedback: "She worked hard on it! A thank-you would mean a lot." },
+      { text: "Help clear the table to say thanks.", good: true, feedback: "Thank-you actions speak loudly too!" },
+    ],
+    explain: "A thankful heart notices blessings. Thanking God and others brings joy.",
+    practice: "Write or draw three things you're thankful for today.",
+    reflection: "What are you most thankful for right now?",
+  },
+  {
+    id: "facing-fear", title: "Facing Fear", verse: "Psalm 56:3",
+    teaching: "Everyone feels afraid sometimes, even people in the Bible. We can bring our fears to God and to trusted grown-ups.",
+    scenario: "You have to sing a solo in the school concert, and your tummy feels full of butterflies.",
+    choices: [
+      { text: "Pray, take a deep breath, and do your best.", good: true, feedback: "That's real courage! Being brave doesn't mean not being scared." },
+      { text: "Tell your teacher or parent how you feel.", good: true, feedback: "Talking to a trusted grown-up is a wise and brave choice." },
+      { text: "Pretend you're sick so you don't have to go.", good: false, feedback: "Pretending isn't honest. Talking about your feelings is better." },
+    ],
+    explain: "Feeling afraid doesn't mean your faith is weak. God is with you, and it's always okay to ask for help.",
+    practice: "Make a 'brave plan': one prayer, one deep breath, one person you can talk to.",
+    reflection: "What helps you feel brave?",
+    safetyNote: "TRUSTED_ADULT",
+  },
+  {
+    id: "standing-up", title: "Standing Up Against Bullying", verse: "Micah 6:8",
+    teaching: "God loves fairness and kindness. When someone is being treated badly, we can help by getting a grown-up and being a friend.",
+    scenario: "On the playground, some kids keep calling another kid mean names.",
+    choices: [
+      { text: "Tell a teacher or playground helper right away.", good: true, feedback: "Getting a trusted grown-up is exactly the right thing to do." },
+      { text: "Go and stand next to the kid and invite them to play with you.", good: true, feedback: "Being a friend to someone who is hurting is very brave and kind." },
+      { text: "Join in so the mean kids like you.", good: false, feedback: "That would hurt someone. God wants us to protect people, not hurt them." },
+    ],
+    explain: "Standing up against bullying doesn't mean fighting. It means getting help and being kind to the person being hurt.",
+    practice: "Name two grown-ups at school you can go to if you see bullying.",
+    reflection: "How would you want others to help if it were you?",
+    safetyNote: "TRUSTED_ADULT",
+  },
+  {
+    id: "caring-for-creation", title: "Caring for Nature and Animals", verse: "Genesis 1:1",
+    teaching: "God made the world and gave people the job of caring for it (Genesis 1:28; 2:15).",
+    scenario: "You see litter on the ground at the park.",
+    choices: [
+      { text: "Pick it up (with a grown-up's OK) and put it in the bin.", good: true, feedback: "Great job caring for God's world!" },
+      { text: "Leave it — it's not yours.", good: false, feedback: "Even if it isn't ours, we can help care for the world God made." },
+      { text: "Ask your family to bring a bag next time to clean up.", good: true, feedback: "What a creative way to help!" },
+    ],
+    explain: "Caring for animals, plants and places is a way to say thank you to God for his creation.",
+    practice: "Do one thing to care for creation today: water a plant, feed a pet, or pick up litter.",
+    reflection: "What part of God's creation do you love most?",
+  },
+  {
+    id: "understanding-differences", title: "Understanding Differences", verse: "Psalm 139:14",
+    teaching: "God made every person wonderfully. People look, talk and live differently, and every person is made in God's image.",
+    scenario: "A classmate speaks a different language at home and some kids laugh at their accent.",
+    choices: [
+      { text: "Ask them to teach you a word in their language.", good: true, feedback: "What a kind and curious way to celebrate differences!" },
+      { text: "Laugh along with the other kids.", good: false, feedback: "Laughing at someone hurts. God made each person wonderfully." },
+      { text: "Tell the kids, 'That's not kind,' and sit with your classmate.", good: true, feedback: "That's brave and loving!" },
+    ],
+    explain: "At Pentecost, God's good news was heard in many languages. God loves people from every nation.",
+    practice: "Learn how to say 'hello' in another language.",
+    reflection: "What makes you special? What makes your friends special?",
+  },
+  {
+    id: "self-control", title: "Practising Self-Control", verse: "Galatians 5:22-23",
+    teaching: "Self-control is a fruit of the Spirit. It means choosing what's right even when we feel like doing something else.",
+    scenario: "You're really angry because your game was turned off before you finished.",
+    choices: [
+      { text: "Take deep breaths and tell your parent how you feel calmly.", good: true, feedback: "Excellent self-control! Using words calmly is hard and you did it." },
+      { text: "Throw the controller.", good: false, feedback: "Big feelings are okay, but throwing things can hurt people or break things." },
+      { text: "Go to a quiet spot to calm down first.", good: true, feedback: "Taking a break to calm down is a wise choice." },
+    ],
+    explain: "Feeling angry isn't wrong. Self-control helps us choose what we do with our feelings.",
+    practice: "Make a 'calm-down plan': breathe, count, talk.",
+    reflection: "What helps you calm down when you feel upset?",
+  },
+];

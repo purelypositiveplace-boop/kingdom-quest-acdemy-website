@@ -1,27 +1,50 @@
 {
-  "name": "biblebright-kids",
+  "name": "kingdom-quest-academy",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build:bible": "tsx scripts/build-bible.ts",
+    "prebuild": "tsx scripts/build-bible.ts && tsx scripts/build-audio-manifest.ts && tsx scripts/build-art-manifest.ts",
+    "predev": "tsx scripts/build-bible.ts && tsx scripts/build-audio-manifest.ts && tsx scripts/build-art-manifest.ts",
     "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "record:narration": "tsx scripts/record-narration.ts",
+    "build:art": "tsx scripts/build-art-manifest.ts"
   },
   "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "bcryptjs": "^3.0.2",
+    "framer-motion": "^12.23.12",
+    "jose": "^6.1.0",
+    "lucide-react": "^0.544.0",
+    "next": "^15.5.28",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "server-only": "^0.0.1",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.55.0",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "^15.5.28",
+    "prisma": "^6.16.2",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.5",
+    "typescript": "^5",
+    "vitest": "^3.2.4",
+    "world-english-bible": "^1.0.1"
   }
 }
